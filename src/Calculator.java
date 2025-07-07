@@ -1,3 +1,5 @@
+import java.util.function.Consumer;
+
 interface Calculator {
     int add(int a, int b);
 
@@ -40,6 +42,18 @@ class CalculatorTest {
         System.out.println(sum2);
         System.out.println(sum3);
         System.out.println(sum4);
+
+
+        Consumer<String> printer = new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                System.out.println(s);
+            }
+        };
+        printer.accept("Hello World");
+
+        Consumer<String> printer2 = System.out::println;
+        printer2.accept("Hello World");
 
     }
 }
