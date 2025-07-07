@@ -1,0 +1,94 @@
+{
+    "checksum": "54b41a865a12490b5b8c8b473cae153b8af08aadf0e90093a6a50623953ac47d",
+    "data": {
+    "id": "f772ba05-96ab-4c86-8e44-e2d8c7ce584e",
+    "createdAt": 1751866042324,
+    "updatedAt": 1751866042366,
+    "title": "/explain (String name) Variable 'name' is alrea...",
+    "messages": [
+        {
+            "id": "6cc2da98-3679-4c86-80d1-82770995109a",
+            "role": "user",
+            "content": [
+                {
+                    "type": "command",
+                    "commandName": "explain"
+                },
+                {
+                    "type": "codeSnippet",
+                    "text": "(String name)",
+                    "language": "java"
+                },
+                {
+                    "type": "text",
+                    "text": "Variable 'name' is already defined in the scope"
+                }
+            ],
+            "context": {
+                "currentFile": {
+                    "path": "C:\\Users\\dredn\\IdeaProjects\\untitled18\\src\\Calculator.java",
+                    "fsPath": "C:/Users/dredn/IdeaProjects/untitled18/src/Calculator.java",
+                    "content": "interface Calculator {\n    int add(int a, int b);\n\n\n}\n\nclass MyCalculator {\n    public int add(int a, int b, Calculator calculator) {\n        return calculator.add(20, 40);\n    }\n}\n\nclass MyCalculator2 {\n    public int add(int a, int b, Calculator calculator) {\n        return calculator.add(40, 60);\n    }\n}\n\nclass CalculatorTest {\n    public static void main(String[] args) {\n        MyCalculator myCalculator = new MyCalculator();\n        MyCalculator2 myCalculator2 = new MyCalculator2();\n\n        int sum = myCalculator.add(10, 20, new Calculator() {\n            public int add(int a, int b) {\n                System.out.println(\"Adding \" + a + \" and \" + b);\n                return a + b;\n            }\n        });\n\n        int sum2 = myCalculator.add(10, 20, (a, b) -> {\n            System.out.println(\"Adding \" + a + \" and \" + b);\n            return a + b;\n        });\n\n        int sum3 = myCalculator.add(10, 20, (int a, int b) -> a - b);\n        int sum4 = myCalculator.add(10, 20, Integer::sum);\n\n        System.out.println(sum);\n        System.out.println(sum2);\n        System.out.println(sum3);\n        System.out.println(sum4);\n        String name;\n        (String name)->{\n            System.out.println(\"hi\"+ name);\n        }\n\n    }\n}\n",
+                    "language": "java"
+                },
+                "codebaseEnabled": true
+            },
+            "createdAt": 1751866042334,
+            "isInternal": false,
+            "rawContent": {
+                "type": "doc",
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {
+                                "type": "command",
+                                "attrs": {
+                                    "label": "explain"
+                                },
+                                "content": [
+                                    {
+                                        "type": "text",
+                                        "text": "/explain"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "codeBlock",
+                                "attrs": {
+                                    "language": "java"
+                                },
+                                "content": [
+                                    {
+                                        "type": "text",
+                                        "text": "(String name)"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "text",
+                                "text": "Variable 'name' is already defined in the scope"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "54fd4173-7492-459f-8163-536d017492fa",
+            "role": "system",
+            "content": [
+                {
+                    "type": "errorText",
+                    "text": "The chat request was not successful. Please try again later.",
+                    "allowRegenerate": true
+                }
+            ],
+            "createdAt": 1751866042366,
+            "isInternal": false
+        }
+    ],
+    "isAgent": false,
+    "isCustomAgent": false
+}
+}
